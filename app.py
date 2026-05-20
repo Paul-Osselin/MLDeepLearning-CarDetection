@@ -116,8 +116,7 @@ if uploaded_file is not None:
 
                 # ── Résultat ──
                 is_damaged = pred_class == "damaged"
-                icon  = "🟢" if is_damaged else "🔴"
-                label = "INTACT" if is_damaged else "ENDOMMAGÉ"
+                
 
                 st.metric(
                     label="Prédiction",
