@@ -115,9 +115,9 @@ if uploaded_file is not None:
                 overlay = get_gradcam(wrapped_model, tensor, image)
 
                 # ── Résultat ──
-                is_damaged = pred_class == "not_damaged"
-                icon  = "🔴" if is_damaged else "🟢"
-                label = "ENDOMMAGÉ" if is_damaged else "INTACT"
+                is_damaged = pred_class == "damaged"
+                icon  = "🟢" if is_damaged else "🔴"
+                label = "INTACT" if is_damaged else "ENDOMMAGÉ"
 
                 st.metric(
                     label="Prédiction",
