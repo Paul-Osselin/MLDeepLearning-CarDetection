@@ -116,14 +116,11 @@ if uploaded_file is not None:
 
                 # ── Résultat ──
                 is_damaged = pred_class == "damaged"
+                icon  = "🟢" if is_damaged else "🔴"
+                label = "INTACT" if is_damaged else "ENDOMMAGÉ"
                 
 
-                st.metric(
-                    label="Prédiction",
-                    value=f"{icon} {label}",
-                    delta=f"Confiance : {confidence*100:.1f}%"
-                )
-
+                
                 # Barre de confiance colorée
                 conf_pct = int(confidence * 100)
                 bar_color = "#e74c3c" if is_damaged else "#27ae60"
